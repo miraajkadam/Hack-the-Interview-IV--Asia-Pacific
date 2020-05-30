@@ -13,7 +13,7 @@ def getNumberOfIntegers(l,r,k):
 				count+=1
 		final.append(count)
 
-	return(final.count(k))
+	return(final.count(k) % pow(10,9) + 7)
 
 
 if __name__ == '__main__':	
