@@ -4,16 +4,20 @@ import math
 
 def getNumberOfIntegers(l,r,k):
 	final=[]	
-
+	count=0
+	flag=False
 	for i in range(int(l)+1,int(r)+1):
-		count=0
-		# print(i)
-		for j in str(i):
-			if(int(j) != 0):
+		# count=0
+		if('0' not in str(i)):			
+			if(len(str(i))==1):
+				flag=True
+			else:
 				count+=1
-		final.append(count)
-
-	return(final.count(k) % pow(10,9) + 7)
+	
+	if(flag==True):
+		return(((int(r)-int(l)) - count) % ((10**9)+7))
+	else:
+		return(count % ((10**9)+7))
 
 
 if __name__ == '__main__':	
